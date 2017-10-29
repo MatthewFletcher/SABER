@@ -27,20 +27,20 @@ with open('sample_wind_data.txt') as winddatafile:
 		#Check if first character is a %, if so, append header data to a list
 		if line.startswith('%'):
 			#Set required elements of each header row as vars
-			year = line[13:17]
-			month = line[18:20]
-			day = line[21:23]
-			hour = line[24:26]
-			numlev = line[32:36]
-			lat = line[55:62]
-			lon = line[63:71]
+			year = int(line[13:17])
+			month = int(line[18:20])
+			day = int(line[21:23])
+			hour = int(line[24:26])
+			numlev = int(line[32:36])
+			lat = int(line[55:62])
+			lon = int(line[63:71])
 		else:
 			#Get information from subsection lines
-			pressure = line[9:15]
-			height = line[16:21]
-			temp = line[22:27]
-			wdir = line[40:45]
-			wvel = line[47:52]
+			pressure = int(line[9:15])
+			height = int(line[16:21])
+			temp = int(line[22:27])
+			wdir = int(line[40:45])
+			wvel = int(line[47:52])
 
 
 			#dataline is the full data for each line
