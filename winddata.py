@@ -56,3 +56,6 @@ outputfile = open('output.txt','w')
 outputfile.write('year,month,day,hour,height,pressure,temp,wdir,wvel\n')
 for item in fulldata:
 	outputfile.write('%s\n'%item)
+	#for item2 in item:
+	#	outputfile.write('{0}'.format(item2))
+	#outputfile.write('\n')
