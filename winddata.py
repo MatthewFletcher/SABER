@@ -1,4 +1,3 @@
-#Author: Matt Fletcher
 
 #Pull information from file at link:
 #README for data https://www1.ncdc.noaa.gov/pub/data/igra/data/igra2-data-format.txt
@@ -38,16 +37,21 @@ with open('sample_wind_data.txt') as winddatafile:
 		else:
 			#Get information from subsection lines
 			pressure = int(line[9:15])
+			if pressure == -9999:
+				break
 			height = int(line[16:21])
+			if height == -9999:
+				break
 			temp = int(line[22:27])
 			wdir = int(line[40:45])
 			wvel = int(line[47:52])
 
 
-	#dataline is the full data for each line
+			#dataline is the full data for each line
 			dataline.append((year,month,day,hour,height,pressure,temp,wdir,wvel))
 			#Append current line of data as a list to the full data set
 			fulldata.append(dataline)
+
 #Open a file to output the data to
 #outputfile = open('output.txt','w')
 
@@ -55,7 +59,7 @@ with open('sample_wind_data.txt') as winddatafile:
 print('year,month,day,hour,height,pressure,temp,wdir,wvel')
 for item in fulldata:
 
-	if '-9999' not in item:
-		#outputfile.write('%s\n'%item)
+	if -9999 not in item:
+	#print('%s\n'%item)
 		for item2 in item:
 			print('{0}'.format(item2))
