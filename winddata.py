@@ -58,7 +58,6 @@ with open('sample_wind_data.txt') as winddatafile:
 #Print header row
 print('year,month,day,hour,height,pressure,temp,wdir,wvel')
 for item in fulldata:
-
 	if -9999 not in item:
 	#print('%s\n'%item)
 		for item2 in item:
