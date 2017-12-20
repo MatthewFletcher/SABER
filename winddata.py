@@ -44,8 +44,11 @@ with open('sample_wind_data.txt') as winddatafile:
 				break
 			temp = int(line[22:27])
 			wdir = int(line[40:45])
+			if wdir == -9999:
+				break
 			wvel = int(line[47:52])
-
+			if wvel  == -9999:
+				break
 
 			#dataline is the full data for each line
 			dataline.append((year,month,day,hour,height,pressure,temp,wdir,wvel))
