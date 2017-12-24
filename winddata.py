@@ -17,7 +17,10 @@
 fulldata = []
 
 #Read file into python
-with open('sample_wind_data.txt') as winddatafile:
+
+filename  = 'USM00072582-data.txt'
+
+with open(filename) as winddatafile:
 	for line in winddatafile:
 
 
@@ -60,6 +63,8 @@ with open('sample_wind_data.txt') as winddatafile:
 
 #Print header row
 print('year,month,day,hour,height,pressure,temp,wdir,wvel')
+
+#Print out data
 for item in fulldata:
 	if -9999 not in item:
 	#print('%s\n'%item)
